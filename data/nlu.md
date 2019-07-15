@@ -1,0 +1,298 @@
+<!---Field 01. Trò chuyện ---------------------------------------------------------->
+
+## intent:greet
+- xin chào
+- chào ngân hàng
+- chào bạn
+- shb
+- hello
+- hi
+- hey
+- mình có vài câu hỏi
+- có ai giúp mình không
+- ngân hàng ơi
+- bạn ơi
+- anh ơi
+- chị ơi
+- cháu ơi
+- hello 
+- chào 
+- hi 
+- có ai ở đây không?
+- [tôi](cust_sex) muốn hỏi
+- [tôi](cust_sex) muốn được tư vấn
+- [tôi](cust_sex) cần giúp
+- [tôi](cust_sex) cần tư vấn
+- hế lu 
+- .
+- giúp [tôi](cust_sex)
+- chào buổi sáng
+- chào buổi chiều
+- chào nhé 
+- chào bạn
+- chào shb 
+- chào ngân hàng 
+- chào chị
+- chào anh
+- xin chào shb
+- xin chào
+- chào em
+- chào shb
+- chào bạn
+- hi
+- hi shb
+- hi bạn
+- hi em
+- hello
+- alo
+- [tôi](cust_sex) cần hỗ trợ
+- [tôi](cust_sex) cần giúp đỡ
+- hey
+- chào
+- giúp [tôi](cust_sex) 
+- blo
+- clo
+- xin chào ngân hàng
+
+## intent:bye
+- chào nhé
+- tạm biệt
+- chào tạm biệt
+- chào tạm biệt em
+- tạm biệt em
+- tạm biệt em nhé
+- tạm biệt shb nhé
+- cút
+- biến
+- xéo
+- đi đi
+- bye
+- nghỉ đi
+- nghỉ
+- tạm biệt
+- bye bye
+- thế thôi nhé
+- mình dừng ở đây thôi nhé
+- chào tạm biệt
+- hẹn gặp lại
+- lần tới nhé
+- chào nhé
+- thôi chào tạm biệt nhé
+- thôi chào
+- ok bye
+- good bye
+- see you
+- later on
+- mình phải đi rồi
+
+## intent:inform_yes
+- có ad
+- có ạ
+- có a
+- ok ad
+- đồng ý
+- [tôi](cust_sex) có
+- mình có
+- được
+- cũng được
+- đúng
+- đúng rồi
+- [tôi](cust_sex) đồng ý
+- chấp nhận
+- good
+- fine
+- let's go
+- mình tiếp túc nhé
+- tiếp tục thôi
+- tốt
+- chuẩn không phải chỉnh
+- ok
+- có em
+- có cần
+- có
+- được
+- đồng ý
+- okie
+- xong
+
+## intent:inform_no
+- không
+- không cần
+- mình không cần
+- không cần đâu 
+- để mình tìm hiểu thêm
+- tạm thời mình chưa cần
+- chắc không cần đâu
+- không em ạ
+- không e
+- khỏi cần
+- thôi không cần nữa
+- không cần đâu ad
+- không cần đâu admin
+- không ad
+- không admin
+- không ạ
+- không a
+- [tôi](cust_sex) không
+- không được
+- [tôi](cust_sex) không đồng ý
+- đừng nói nữa
+- stop
+- dừng lại
+- xin lỗi
+- vậy đủ rồi
+- không muốn
+- chán chết
+- thôi
+- không muốn nói nữa
+- không nhé
+- thôi không
+- vậy thôi
+- không thể
+- dừng
+- ngừng nói đi
+- thôi nói đi
+- không cần
+- không
+- không nhu cầu
+- không có
+- không em
+- thôi
+- thôi em
+- [anh](cust_sex) không cần
+
+## intent:thank
+- chuẩn
+- hay
+- siêu
+- tuyệt
+- cám ơn
+- thanks
+- thank you
+- ok
+- [tôi](cust_sex) hiểu rồi
+- cám ơn ngân hàng nhé
+- yes
+- rõ rồi
+- hóa ra là vậy cám ơn nhé
+- uk
+- um
+- tuyệt vời
+- tôi cảm ơn
+- ok. cảm ơn
+- tốt. cảm ơn nhé
+- giỏi lắm
+- [anh](cust_sex) đã có thông tin mình cần
+- [mình](cust_sex) cảm ơn nhé
+- cảm ơn
+- cảm ơn rất nhiều
+- hay quá
+- cảm ơn bạn
+- cảm ơn chị 
+- cảm ơn shb 
+- thank you so much
+- thank you a lot 
+- you are so good
+- that's fine
+- cảm ơn đã trợ giúp nhé 
+- thông tin hữu ích 
+- tôi đã rõ
+- đẹp đấy
+- cảm ơn em
+- cảm ơn em nhiều nhé
+- cảm ơn
+- tốt quá, cảm ơn em
+- cảm ơn shb
+- thanks em nhé
+- hehe, thanks em nhiều
+- thanks nhá
+- thank you em nhiều
+- thanks shb
+- thanks shb nhé
+- bạn giỏi thật
+- em giỏi thật
+- em giỏi quá
+- giỏi thật
+- giỏi quá
+
+
+
+<!------ Field 02. Hỏi về thông tin user --------------------------------------------->
+
+
+<!---- Field 03. Hỏi về bạn ---------------------------------------------------------->
+
+## intent:ask_func_list
+- bạn có thể làm được những gì
+- bạn giúp được gì nào
+- bạn làm gì
+- chức năng của bạn là gì
+- bạn có thể làm được mấy chức năng
+- bạn giỏi nhất làm gì
+- bạn có tư vấn giúp mình được không
+- việc gì bạn làm được
+- kể xem bạn làm được gì
+- cho mình biết bạn làm được gì nhé
+- bạn hữu dụng như thế nào
+- bạn có ích trong những việc gì
+- lĩnh vực gì bạn giỏi nhất
+- mình tò mò về những việc bạn làm được
+- chẳng biết bạn làm được gì
+- bạn tệ nhất trong việc gì
+- bạn biết được những lĩnh vực gì
+- bạn giỏi hỗ trợ nhất trong lĩnh vực gì
+- kể cho mình biết những việc bạn có thể làm được nhé
+- nói cho mình về những việc bạn giúp được mình
+- bạn giúp được mình gì nào
+- bạn có thể làm gì
+- em giúp được gì
+- em làm được gì
+- mày biết làm gì
+- em biết làm gì
+- bạn biết làm gì
+- biết làm gì
+- làm được gì 
+- có làm được gì 
+- có làm được trò gì 
+- giúp giúp cái gì
+- biết gì mà nói
+- làm được gì
+- giúp được gì
+- mày làm được gì
+- có biết gì 
+
+## intent:ask_name
+- bạn tên gì
+- tên gì
+- chị tên gì
+- anh tên gì
+- tên của bạn là gì
+- tên của chị là gì
+- tên của anh là gì
+- cho mình hỏi tên nhé
+- mình muốn biết tên bạn
+- mình muốn tiện xưng hộ hơn, cho mình biết tên nhé
+- để tiện xưng hộ thì tên bạn là gì
+- cho em xin tên của anh ạ
+- cho em xin tên của chị ạ
+- được biết tên bạn thì tốt nhỉ
+- vui lòng cho mình biết tên nhé
+- xin phép hỏi tên của bạn
+- vậy thì tên bạn là gì
+- tên bạn trong tiếng việt là gì
+- bạn có vui lòng cho mình biết tên được không
+- chúng ta nên biết tên nhau nhỉ?
+- em tên là gì thế
+- tên em là gì
+- tên em 
+- tên bạn 
+- bạn tên là gì 
+- bạn tên gì thế
+- em tên gì
+
+<!---- Field 04. Hỏi về Ngân hàng ------------------------------------------------------>
+
+
+<!---- Field 05. Hỏi về Sản phẩm dịch vụ ----------------------------------------------->
+
+

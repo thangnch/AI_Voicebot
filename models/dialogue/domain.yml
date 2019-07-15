@@ -1,0 +1,317 @@
+%YAML 1.1
+---
+actions:
+- utter_greet
+- utter_greet_with_name
+- utter_bye
+- utter_unclear
+- action_save_cust_info
+- action_saving_rate
+- utter_saving_rate_other_period
+- utter_saving_rate_ask_period
+- action_loan_steps
+- utter_loan_steps_ask_target
+- utter_ask_account_no
+- utter_confirm_error
+- utter_ask_mobile_no
+- utter_make_call
+- utter_open_account_ask_license_1st
+- utter_open_account_ask_license_2nd
+- utter_open_account_ask_voice
+- utter_open_account_ask_OTP
+- utter_confirm_open_acct
+- action_save_mobile_no
+- utter_open_account_ask_selfie
+- utter_open_credit_card_ask_license
+- action_get_info_from_license_no
+- utter_open_credit_card_ask_selfie
+- utter_confirm_open_credit_card
+- utter_func_list
+- utter_thank
+- utter_shit
+- utter_chatchit
+- utter_ask_name
+- action_handle_unclear
+- action_ask_news
+- action_ask_location
+- utter_lost_card_ask_license_no
+- action_get_cards_from_license_no
+- utter_confirm_lost_card
+- utter_transfer_ask_nickname
+- utter_transfer_ask_amount
+- utter_transfer_ask_otp
+- utter_transfer_confirm
+- action_transfer_ask
+- action_reset_slot
+- utter_meet_human
+config:
+  store_entities_as_slots: true
+entities:
+- saving_period
+- currency
+- loan_target
+- cust_name
+- cust_sex
+- acct_no
+- mobile_no
+- OTP
+- license_no
+- loc_type
+- inp_number
+- transfer_amount
+- transfer_amount_unit
+- transfer_nick
+forms: []
+intents:
+- greet:
+    use_entities: true
+- give_name:
+    use_entities: true
+- thank:
+    use_entities: true
+- bye:
+    use_entities: true
+- ask_news:
+    use_entities: true
+- ask_func_list:
+    use_entities: true
+- ask_saving_rate:
+    use_entities: true
+- give_saving_rate_period:
+    use_entities: true
+- give_saving_rate_invalid:
+    use_entities: true
+- ask_loan_steps:
+    use_entities: true
+- report_transfer_error:
+    use_entities: true
+- give_number:
+    use_entities: true
+- inform_yes:
+    use_entities: true
+- inform_no:
+    use_entities: true
+- inform_send_data_ok:
+    use_entities: true
+- open_account:
+    use_entities: true
+- open_credit_card:
+    use_entities: true
+- shit:
+    use_entities: true
+- chatchit:
+    use_entities: true
+- ask_name:
+    use_entities: true
+- ask_location:
+    use_entities: true
+- report_lost_card:
+    use_entities: true
+- transfer_acct:
+    use_entities: true
+- meet_human:
+    use_entities: true
+slots:
+  OTP:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  acct_no:
+    auto_fill: false
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  bot_position:
+    auto_fill: true
+    initial_value: SHB
+    type: rasa_core.slots.TextSlot
+  currency:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  cust_name:
+    auto_fill: false
+    initial_value: ''
+    type: rasa_core.slots.TextSlot
+  cust_sex:
+    auto_fill: false
+    initial_value: 'Quý khách '
+    type: rasa_core.slots.TextSlot
+  license_no:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  loan_target:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  loc_type:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  mobile_no:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  saving_period:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  transfer_amount:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  transfer_amount_unit:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  transfer_nick:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+templates:
+  utter_ask_account_no:
+  - text: "Vâng, {bot_position} rất lấy làm tiếc vì những gì {cust_sex} {cust_name}\
+      \ đã gặp phải!\n{cust_sex} vui lòng cho {bot_position} xin số tài khoản để kiểm\
+      \ tra được không ạ?"
+  - text: "Rất xin lỗi {cust_sex}!\nĐể {bot_position} có thể kiểm tra, {cust_sex}\
+      \ vui lòng cho {bot_position} xin số tài khoản được không ạ?"
+  - text: Vô cùng xin lỗi {cust_sex}. {bot_position} sẽ kiểm tra ngay giúp {cust_sex}.
+      {cust_sex} cho {bot_position} xin số tài khoản ạ?
+  utter_ask_mobile_no:
+  - text: '{cust_sex} vui lòng cung cấp số điện thoại liên hệ ạ!'
+  - text: '{cust_sex} cho {bot_position} xin lại số điện thoại để tiện liên hệ khi
+      cần ạ!'
+  - text: Số điện thoại của {cust_sex} là gì ạ?
+  - text: '{cust_sex} đang sử dụng số điện thoại nào ạ?'
+  utter_ask_name:
+  - text: Em họ Bank, tên Bot! Người ta hay gọi em là Bank Bot thông minh xinh đẹp
+      giỏi giang nhất vũ trụ ạ! {cust_sex} cần trợ giúp gì ạ?
+  - text: Dạ thưa {cust_sex}. Tên Tiếng Việt của em là Trợ lý ảo Ngân hàng nhưng em
+      thích gọi bằng tên Tiếng Anh là Bank Bot cho nó Tây!
+  utter_bye:
+  - text: Kính chào tạm biệt và mong sớm gặp lại quý khách!
+  - text: Kính chào tạm biệt và chúc quý khách một ngày tốt lành!
+  utter_chatchit:
+  - text: Rất cảm ơn {cust_sex}. Nhưng có lẽ những vấn đề đó chúng ta nên nói riêng
+      cho bí mật ạ!
+  - text: Cảm ơn {cust_sex} đã quan tâm. Nhưng có những thứ hãy để nó thật tự nhiên
+      thì tốt hơn ạ!
+  - text: Dạ, {cust_sex} làm {bot_position} hơi ngại tý tý!
+  - text: Úi giời! {bot_position} còn đang hỗ trợ khách hàng!
+  utter_confirm_error:
+  - text: Cảm ơn {cust_sex}! {bot_position} đã tiếp nhận thông báo của {cust_sex}
+      và sẽ liên hệ lại trong thời gian sớm nhất! {cust_sex} có muốn gặp ngay tổng
+      đài viên không?
+  - text: '{cust_sex} cứ yên tâm ạ, có {bot_position} ra tay thì gạo xay ra cám. Bên
+      em có dịch vụ gọi đến tổng đài miễn phí, anh có muốn gọi luôn cho nhanh không?'
+  utter_confirm_lost_card:
+  - text: Kính thưa {cust_sex}, thẻ của anh đã được khóa an toàn. {cust_sex} hãy đến
+      các điểm giao dịch của SHB để được mở thẻ mới ạ!
+  utter_confirm_open_acct:
+  - text: Xin chân thành cảm ơn {cust_sex}. {bot_position} đã tiếp nhận yêu cầu mở
+      tài khoản của {cust_sex} và sẽ liên hệ lại trong thời gian sớm nhất!
+  utter_confirm_open_credit_card:
+  - text: Xin chân thành cảm ơn {cust_sex}. {bot_position} đã tiếp nhận yêu cầu mở
+      thẻ tín dụng của {cust_sex} và sẽ liên hệ lại trong thời gian sớm nhất!
+  utter_func_list:
+  - text: "Xin cảm ơn {cust_sex} đã quan tâm. Sếp giao nhiệm vụ hỗ trợ khách hàng\
+      \ các mảng: lãi suất tiết kiệm, thủ tục vay, mở tài khoản, mở thẻ, tiếp nhận\
+      \ báo lỗi...\n{cust_sex} có thể hỏi {bot_position} bất cứ gì ạ!"
+  - text: 'Dạ {bot_position} làm được rất nhiều thứ như: trả lời về lãi suất tiết
+      kiệm, thủ tục vay, hỗ trợ khóa thẻ và chuyển khoản...'
+  utter_greet:
+  - text: Kính chào Quý khách, Quý khách vui lòng cho SHB biết quý danh để tiện xưng
+      hô được không ạ?
+  - text: Kính chào Quý khách, xin Quý khách cho biết quý danh được không ạ?
+  - text: Chào mừng Quý khách đến với SHB, Quý khách vui lòng cho biết tên để SHB
+      có thể hỗ trợ quý khách tốt hơn được không ạ?
+  - text: Xin cảm ơn Quý khách đã quan tâm tới Ngân hàng SHB, SHB xin phép được hỏi
+      Quý khách tên là gì được không ạ?
+  - text: Chào Quý khách, không biết SHB có thể biết tên của Quý khách được không
+      ạ?
+  utter_greet_with_name:
+  - text: Kính chào {cust_sex}{cust_name}. {bot_position} rất hân hạnh được hỗ trợ
+      ạ?
+  - text: Vâng, {bot_position} xin chào {cust_sex}{cust_name}. {bot_position} có thể
+      giúp gì được {cust_sex} ạ?
+  - text: Vâng, {bot_position} xin chào {cust_sex}{cust_name}. Không biết {bot_position}
+      có thể giúp gì được {cust_sex} ạ?
+  - text: Xin chào {cust_sex}{cust_name}, {cust_sex} cần hỗ trợ thông tin gì ạ?
+  - text: "Chúc {cust_sex}{cust_name} một ngày tốt lành! {cust_sex} có thể đặt các\
+      \ câu hỏi ngắn gọn như:\n-Tôi cần hỏi lãi suất tiết kiệm\n-Tôi bị mất thẻ\n\
+      -Tôi cần chuyển khoản\n.....\n{bot_position} hân hạnh được phục vụ {cust_sex}!"
+  - text: '{bot_position} có thể hỗ trợ các thông tin về: lãi suất tiết kiệm, thủ
+      tục vay, mở tài khoản, mở thẻ, tìm SHB gần nhất, hỗ trợ chuyển khoản...{cust_sex}
+      cần hỗ trợ gì ạ?'
+  utter_loan_steps_ask_target:
+  - text: Vâng, {cust_sex} muốn vay vốn để làm gì ạ?
+  - text: SHB có rất nhiều hình thức vay vốn khác nhau, {cust_sex} cần vay vốn với
+      mục đích gì? Mua xe hay mua nhà?
+  - text: '{cust_sex} vay mua với mục đích gì ạ?'
+  - text: Cảm ơn {cust_sex}{cust_name} đã quan tâm tới sản phẩm của Ngân hàng SHB.
+      {cust_sex} vay vốn với mục đích gì ạ?
+  - text: Vâng, {cust_sex} muốn vay với mục đích gì?
+  utter_lost_card_ask_license_no:
+  - text: Xin {cust_sex} hãy yên tâm. {cust_sex} hãy cung cấp số Chứng minh nhân dân
+      để {bot_position} kiểm tra và hỗ trợ ạ?
+  utter_make_call:
+  - text: Đang kết nối tới tổng đài của SHB!|action=make_call:1800588856
+  utter_meet_human:
+  - text: Vâng, em sẽ kết nối cho {cust_sex} tới các chị nhân viên xinh tươi. Nhưng
+      {cust_sex} nhớ cho em phục vụ lần sau nhé!
+  utter_open_account_ask_OTP:
+  - text: '{cust_sex} vui lòng cung cấp mã xác thực OTP đã gửi vào số điện thoại {mobile_no}.'
+  utter_open_account_ask_license_1st:
+  - text: Vâng cảm ơn {cust_sex}. Để tiếp tục mở tài khoản, {cust_sex} vui lòng chụp
+      ảnh mặt trước của Chứng minh nhân dân.|action=takephoto:id1
+  utter_open_account_ask_license_2nd:
+  - text: '{cust_sex} vui lòng chụp ảnh mặt sau của Chứng minh nhân dân!|action=takephoto:id2'
+  utter_open_account_ask_selfie:
+  - text: '{cust_sex} vui lòng chụp một tấm ảnh chân dung để định danh.|action=takephoto:selfie'
+  utter_open_account_ask_voice:
+  - text: Để đăng ký xác thực bằng giọng nói, {cust_sex} vui lòng đọc từ chậm từ 0
+      đến 9 sau tiếng beep|action=record:voice
+  utter_open_credit_card_ask_license:
+  - text: Vâng cảm ơn {cust_sex}. Để tiếp tục mở thẻ tín dụng, {cust_sex} vui lòng
+      cung cấp số Chứng minh nhân dân!
+  utter_saving_rate_ask_period:
+  - text: Vâng, {cust_sex} cần hỏi cho kỳ hạn bao nhiêu tháng ạ?
+  - text: Vâng, {cust_sex} cần gửi bao nhiêu tháng ạ?
+  - text: Dạ vâng, {cust_sex}{cust_name} định gửi tiền trong mấy tháng ạ?
+  utter_saving_rate_other_period:
+  - text: '{cust_sex} có cần thêm thông tin kỳ hạn nào nữa không ạ?'
+  utter_shit:
+  - text: Vô cùng xin lỗi {cust_sex} vì {bot_position} đã mang lại trải nghiệm chưa
+      tốt! {cust_sex} thông cảm và cho phép {bot_position} được tiếp tục phục vụ {cust_sex}
+      ạ!
+  - text: '{bot_position} đang học hỏi hàng ngày để tiếp tục được phục vụ {cust_sex}{cust_name}
+      tốt hơn! Rất mong {cust_sex} thông cảm.'
+  utter_thank:
+  - text: Dạ không có gì ạ! Được phục vụ {cust_sex} là sứ mệnh và niềm vui của {bot_position}
+      ạ!
+  - text: Dạ {bot_position} còn phải cố gắng nhiều để tiếp tục phục vụ khách hàng
+      tốt hơn.
+  - text: Cảm ơn {cust_sex} đã quá khen ạ!
+  utter_transfer_ask_amount:
+  - text: '{cust_sex} cần chuyển bao nhiêu tiền?'
+  - text: Số tiền cần chuyển là bao nhiêu ạ?
+  - text: 'Vâng, {cust_sex} muốn chuyển bao nhiều tiền? {cust_sex} hãy nhập ngắn gọn
+      như: 500.000, 200 nghìn hoặc 1 tỷ... dể {bot_position} có thể hiểu được ạ!'
+  utter_transfer_ask_nickname:
+  - text: '{bot_position} sẽ hỗ trợ {cust_sex} chuyển tiền đến bạn bè, người thân
+      trong danh sách thụ hưởng. {cust_sex} hãy cho biết tên người nhận tiền!'
+  - text: '{cust_sex} hỏi đúng chỗ rồi ạ. {bot_position} sẽ giúp {cust_sex}{cust_name}
+      chuyển tiền ngay! {cust_sex} muốn chuyển cho người thân nào trong danh sách
+      ạ?'
+  utter_transfer_ask_otp:
+  - text: '{cust_sex} vui lòng cung cấp cho {bot_position} mã OTP đã được gửi đến
+      số điện thoại 0903xxx222?'
+  - text: Để đảm bảo an toàn, một mã xác thực đã được gửi đến số điện thoại 0903xxx222,
+      {cust_sex} hãy cho {bot_position} xin mã số đó nhé.
+  utter_transfer_confirm:
+  - text: Kính thưa {cust_sex}, {bot_position} xin thông báo giao dịch đã thành công!
+  utter_unclear:
+  - text: Thưa quý khách, hiện tại tôi chưa hiểu được yêu cầu của Quý khách. Quý khách
+      vui lòng sử dụng các câu ngắn gọn như 'Tôi muốn hỏi lãi suất SHB','Anh cần hỏi
+      thủ tục vay','SHB gần nhất' hay 'Mở thẻ tín dụng'...hoặc gọi số điện thoại 1800-5888-56
+      (miễn phí) để được hỗ trợ!

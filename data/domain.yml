@@ -1,0 +1,156 @@
+intents:
+# Ý đồ khách hàng
+ - greet
+ - give_name
+ - thank
+ - bye
+ - ask_news
+ - ask_func_list
+ - ask_saving_rate
+ - give_saving_rate_period
+ - give_saving_rate_invalid
+ - ask_loan_steps
+ - report_transfer_error
+ - give_number
+ - inform_yes
+ - inform_no
+ - inform_send_data_ok
+ - give_number
+ - open_account
+ - open_credit_card
+ - shit
+ - chatchit
+ - ask_name
+ - ask_location
+ - report_lost_card
+ - transfer_acct
+ - meet_human
+
+entities:
+# Các thực thể
+ - saving_period
+ - currency
+ - loan_target
+ - cust_name
+ - cust_sex
+ - acct_no
+ - mobile_no
+ - OTP
+ - license_no
+ - loc_type
+ - inp_number
+ - transfer_amount
+ - transfer_amount_unit
+ - transfer_nick
+
+
+slots:
+  bot_position:
+    type: text
+    initial_value: "SHB"
+  saving_period:
+    type: text
+  currency:
+    type: text
+  loan_target:
+    type: text
+  cust_name:
+    auto_fill: false
+    type: text
+    initial_value: ""
+  cust_sex:
+    auto_fill: false
+    type: text
+    initial_value: "Quý khách "
+  acct_no:
+    auto_fill: false
+    type: text
+  mobile_no:
+    auto_fill: true
+    type: text
+  OTP:
+    auto_fill: true
+    type: text
+  license_no:
+    auto_fill: true
+    type: text
+  loc_type:
+    auto_fill: true
+    type: text
+  transfer_amount:
+   auto_fill: true
+   type: text
+  transfer_amount_unit:
+   auto_fill: true
+   type: text
+  transfer_nick:
+   auto_fill: true
+   type: text
+
+templates:
+# Bot trả lời
+ utter_greet:
+  - text: "Kính chào Quý khách, Quý khách vui lòng cho Bank biết quý danh để tiện xưng hô được không ạ?"
+  - text: "Kính chào tạm biệt và mong sớm gặp lại quý khách!"
+  - text: "Kính chào tạm biệt và chúc quý khách một ngày tốt lành!"
+ utter_meet_human:
+  - text: "Vâng, em sẽ kết nối cho {cust_sex} tới các chị nhân viên xinh tươi. Nhưng {cust_sex} nhớ cho em phục vụ lần sau nhé!"
+ utter_chatchit:
+  - text: "Rất cảm ơn {cust_sex}. Nhưng có lẽ những vấn đề đó chúng ta nên nói riêng cho bí mật ạ!"
+  - text: "Cảm ơn {cust_sex} đã quan tâm. Nhưng có những thứ hãy để nó thật tự nhiên thì tốt hơn ạ!"
+  - text: "Dạ, {cust_sex} làm {bot_position} hơi ngại tý tý!"
+  - text: "Úi giời! {bot_position} còn đang hỗ trợ khách hàng!"
+ utter_ask_name:
+  - text: "Em họ Bank, tên Bot! Người ta hay gọi em là Bank Bot thông minh xinh đẹp giỏi giang nhất vũ trụ ạ! {cust_sex} cần trợ giúp gì ạ?"
+  - text: "Dạ thưa {cust_sex}. Tên Tiếng Việt của em là Trợ lý ảo Ngân hàng nhưng em thích gọi bằng tên Tiếng Anh là Bank Bot cho nó Tây!"
+ utter_unclear:
+  - text: "Thưa quý khách, hiện tại tôi chưa hiểu được yêu cầu của Quý khách. "
+
+
+
+actions:
+# templates (as they are reply actions),
+# also custom actions if any
+ - utter_greet
+ - utter_greet_with_name
+ - utter_bye
+ - utter_unclear
+ - action_save_cust_info
+ - action_saving_rate
+ - utter_saving_rate_other_period
+ - utter_saving_rate_ask_period
+ - action_loan_steps
+ - utter_loan_steps_ask_target
+ - utter_ask_account_no
+ - utter_confirm_error
+ - utter_ask_mobile_no
+ - utter_make_call
+ - utter_open_account_ask_license_1st
+ - utter_open_account_ask_license_2nd
+ - utter_open_account_ask_voice
+ - utter_open_account_ask_OTP
+ - utter_confirm_open_acct
+ - action_save_mobile_no
+ - utter_open_account_ask_selfie
+ - utter_open_credit_card_ask_license
+ - action_get_info_from_license_no
+ - utter_open_credit_card_ask_selfie
+ - utter_confirm_open_credit_card
+ - utter_func_list
+ - utter_thank
+ - utter_shit
+ - utter_chatchit
+ - utter_ask_name
+ - action_handle_unclear
+ - action_ask_news
+ - action_ask_location
+ - utter_lost_card_ask_license_no
+ - action_get_cards_from_license_no
+ - utter_confirm_lost_card
+ - utter_transfer_ask_nickname
+ - utter_transfer_ask_amount
+ - utter_transfer_ask_otp
+ - utter_transfer_confirm
+ - action_transfer_ask
+ - action_reset_slot
+ - utter_meet_human

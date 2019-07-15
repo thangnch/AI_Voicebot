@@ -1,0 +1,13 @@
+digraph  {
+0 [class="start active", fillcolor=green, fontsize=12, label=START, style=filled];
+1 [class=active, fontsize=12, label=utter_greet];
+2 [class=active, fontsize=12, label=""];
+3 [class=active, fontsize=12, label=utter_greet];
+4 [class="intent dashed active", label="  ?  ", shape=rect];
+5 [class="intent active", fillcolor=lightblue, label=hi, shape=rect, style=filled];
+0 -> 5  [class=active, key=0];
+1 -> 2  [class=active, key=NONE, label=""];
+2 -> 3  [class=active, key=NONE, label=""];
+3 -> 4  [class=active, key=NONE, label=""];
+5 -> 1  [class=active, key=0];
+}

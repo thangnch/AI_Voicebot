@@ -1,0 +1,2 @@
+model_checkpoint_path: "/Users/thangnguyenchien/PycharmProjects/AIBeginner/venv/rasamdl/models/nlu/default/chat/component_6_EmbeddingIntentClassifier.ckpt"
+all_model_checkpoint_paths: "/Users/thangnguyenchien/PycharmProjects/AIBeginner/venv/rasamdl/models/nlu/default/chat/component_6_EmbeddingIntentClassifier.ckpt"

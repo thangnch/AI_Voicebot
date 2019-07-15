@@ -1,0 +1,1 @@
+sudo kill -9 `ps aux | grep rasa_core | awk '{print $2}'`

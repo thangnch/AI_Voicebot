@@ -1,0 +1,6 @@
+[
+    {
+        "name": "inp_number",
+        "pattern": "[0-9]{*}"
+    }
+]
