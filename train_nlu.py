@@ -7,7 +7,7 @@ from rasa_nlu.model import Trainer
 from rasa_nlu import config
 from rasa_nlu.model import Metadata, Interpreter
 
-# Functions
+# Ham train NLU
 #------------
 def train (data, config_file, model_dir):
     training_data = load_data(data)
@@ -15,25 +15,19 @@ def train (data, config_file, model_dir):
     trainer.train(training_data)
     model_directory = trainer.persist(model_dir, fixed_model_name = 'chat')
 
-# Training
-#------------
+
+# Tien hanh train modul NLU
+# Input : File nlu.md
+# Output: Model NLU trong thu mục models/nlu
 train('data/nlu.md', 'config/config.yml', 'models/nlu')
 
-# loading the interpreter
+# Load modul NLU
 interpreter = Interpreter.load('./models/nlu/default/chat')
 
-# define function to ask question
+# Ham test NLU
 def ask_question(text):
     print(interpreter.parse(text))
 
-# asking question
-ask_question("Huy")
-ask_question("Chị muốn mở tài khoản bên em có được không")
-ask_question("Client###")
-ask_question("Không")
-ask_question("Lãi suất sao rồi")
-ask_question("anh đang thèm tiền")
-ask_question("Có ai không")
-ask_question("Cảm ơn em nhé")
-ask_question("thanks nhá")
-ask_question("Vay vốn ngân hàng")
+
+ask_question("xin chào")
+ask_question("Cảm ơn")
