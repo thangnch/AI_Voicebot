@@ -17,7 +17,7 @@ from rasa_core.interpreter import RasaNLUInterpreter
 #------------
 def train_dialog(dialog_training_data_file, domain_file, path_to_model = 'models/dialogue'):
     logging.basicConfig(level='INFO')
-    fallback = FallbackPolicy(fallback_action_name="action_handle_unclear", core_threshold=0.3, nlu_threshold=0.3)
+    fallback = FallbackPolicy(fallback_action_name="utter_unclear", core_threshold=0.3, nlu_threshold=0.3)
 
     agent = Agent(domain_file,
               policies=[MemoizationPolicy(max_history=1),KerasPolicy(epochs=200,
